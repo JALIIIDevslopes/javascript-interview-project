@@ -45,6 +45,7 @@
  */
 
 function comp(a, b) {
+    if (a==null || b==null) {return false;}
    if (a.length != b.length) {return false;}
    let c=a.map((value) => value**2);
    for (let x=0; x<a.length; x++) {
@@ -56,12 +57,22 @@ function comp(a, b) {
    if (b.length>0) return false;
    return true;
 }
-
-const a3 = [121, 144, 19, 161, 19, 144, 19, 11];
-const b3 = [121, 14641, 20736, 36100, 25921, 361, 20736, 361];
- console.log(comp(a3, b3)); // should return false
-const a1 = [121, 144, 19, 161, 19, 144, 19, 11];   
+ const a1 = [121, 144, 19, 161, 19, 144, 19, 11];   
 const b1 = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
- console.log(comp(a1, b1)); // should return true
-
+console.log(comp(a1, b1)); // should return true
+ const a2 = [121, 144, 19, 161, 19, 144, 19, 11];
+ const b2 = [132, 14641, 20736, 361, 25921, 361, 20736, 361];
+ console.log(comp(a2, b2)); // should return false
+ const a3 = [121, 144, 19, 161, 19, 144, 19, 11];
+ const b3 = [121, 14641, 20736, 36100, 25921, 361, 20736, 361];
+ console.log(comp(a3, b3)); // should return false
+ const a4 = [];
+ const b4 = [];
+ console.log(comp(a4, b4)); // should return true
+ const a5 = null;
+ const b5 = [1, 4, 9];
+ console.log(comp(a5, b5)); // should return false
+const a6 = [1, 2, 3];
+ const b6 = null;
+console.log(comp(a6, b6)); // should return false
 
